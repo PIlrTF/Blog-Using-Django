@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            height: 115px;
+            background: #841923;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: relative; /* Add relative positioning */
+        }
+
+        .logo {
+            width: 166px;
+            height: 101px;
+            background: url('blog/templates/blog/logo.png');
+            background-size: cover;
+        }
+
+        .header-icon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 18px; /* Increased font size */
+            line-height: 24px; /* Adjusted line height */
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .extra-box {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .extra-box div {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border: 1px solid #FFFFFF;
+            height: 39px;
+        }
+
+        .extra-box div a {
+            font-weight: 600;
+            font-size: 18px; /* Increased font size */
+            line-height: 24px; /* Adjusted line height */
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .footer {
+            width: 100%;
+            height: 253px;
+            background: #161616;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 1440px) {
+            .header {
+                padding: 0 10px;
+            }
+
+            .logo {
+                width: 120px;
+                height: 80px;
+            }
+
+            .nav-links a {
+                font-size: 16px; /* Adjusted font size */
+            }
+
+            .extra-box div {
+                height: 35px; /* Adjusted height */
+                padding: 5px;
+                gap: 5px;
+            }
+
+            .extra-box div a {
+                font-size: 16px; /* Adjusted font size */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .extra-box {
+                flex-direction: column;
+                gap: 5px;
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links a {
+                font-size: 14px; /* Adjusted font size */
+            }
+
+            .extra-box div {
+                height: 30px; /* Adjusted height */
+                padding: 2px;
+            }
+
+            .extra-box div a {
+                font-size: 14px; /* Adjusted font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="E:\dvg\back_end\backend\blog\templates\blog\logo.PNG" alt="Header Icon" class="header-icon">
+        <div class="logo"></div>
+        <nav class="nav-links">
+            <a href="#">UI/UX</a>
+            <a href="#">AI Tools</a>
+            <a href="#">Web Development</a>
+            <a href="#">Database</a>
+            <a href="#">More</a>
+        </nav>
+        <div class="extra-box">
+            <div class="frame-1000003456">
+                <a href="#">Write for us</a>
+            </div>
+            <div class="frame-1000003457">
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </header>
+    <a href="{% url 'blog_index' %}">Home</a>
+    <hr>
+    {% block page_title %}{% endblock %}
+    {% block page_content %}{% endblock %}
+    <hr>
+    <footer class="footer">
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+        <p>Follow us on <a href="#">Twitter</a>, <a href="#">Facebook</a>, and <a href="#">Instagram</a>.</p>
+    </footer>
+</body>
+</html>
